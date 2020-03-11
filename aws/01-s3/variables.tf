@@ -13,7 +13,7 @@ variable "owner" {
 }
 
 variable "project_prefix" {
-  default = "tf-samples"
+  default = "alc-tf-samples"
 }
 
 # set this to false if you want the local values defined below to be fixed
