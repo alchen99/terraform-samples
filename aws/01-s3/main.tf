@@ -1,7 +1,3 @@
-locals {
-  s3_bucket_name_local = "%{ if var.add_suffix }${local.s3_bucket_name}-${data.terraform_remote_state.random_string.outputs.suffix}%{ else }${local.s3_bucket_name}%{ endif }"
-}
-
 module "s3_bucket" {
   source = "git@github.com:alchen99/terraform-aws-s3-bucket.git"
 
