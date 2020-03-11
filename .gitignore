@@ -1,0 +1,27 @@
+.git
+.terraform
+
+# ignore temporary files
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+*.old
+*.orig
+*.bak
+z-*
+z-*/
+zz-*
+zz-*/
+zzz-*
+zzz-*/
+
+# ignore some Mac files
+.DS_Store
+
+# Ignore binary files
+*.zip
+*.rpm
+*.pyc
