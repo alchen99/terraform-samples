@@ -5,7 +5,7 @@ variable "region" {
 }
 
 variable "env" {
-  default = "dev"
+  default = "test"
 }
 
 variable "owner" {
