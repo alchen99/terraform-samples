@@ -4,7 +4,7 @@ terraform {
   backend "s3" {
     region         = "us-east-1"
     bucket         = "alc-tf-samples-state"
-    key            = "public-samples/closed/s3.tfstate"
+    key            = "public-samples/s3.tfstate"
     dynamodb_table = "alc-tf-samples-state"
     encrypt        = "true"
   }

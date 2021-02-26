@@ -5,7 +5,7 @@ variable "region" {
 }
 
 variable "env" {
-  default = "closed"
+  default = "dev"
 }
 
 variable "owner" {
