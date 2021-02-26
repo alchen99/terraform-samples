@@ -1,10 +1,10 @@
 # generate a random string with no special characters and use as suffix
 resource "random_string" "suffix" {
-  length  = 15
+  length  = 10
   upper   = false
   special = false
 }
 
 output "suffix" {
-  value = "Closed ${random_string.suffix.id}"
+  value = random_string.suffix.id
 }
