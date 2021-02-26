@@ -4,7 +4,7 @@ data "terraform_remote_state" "random_string" {
   config = {
     region         = "us-east-1"
     bucket         = "alc-tf-samples-state"
-    key            = "public-samples/test/random.tfstate"
+    key            = "public-samples/closed/random.tfstate"
     dynamodb_table = "alc-tf-samples-state"
     encrypt        = "true"
   }

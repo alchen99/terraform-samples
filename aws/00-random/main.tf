@@ -6,5 +6,5 @@ resource "random_string" "suffix" {
 }
 
 output "suffix" {
-  value = "test-${random_string.suffix.id}"
+  value = "closed-${random_string.suffix.id}"
 }
