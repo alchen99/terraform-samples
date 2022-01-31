@@ -5,7 +5,7 @@
   "limitConcurrent": true,
   "parameterConfig": [
     {
-      "default": "test5",
+      "default": "test7",
       "description": "Terraform Workspace",
       "hasOptions": false,
       "label": "",
@@ -61,7 +61,7 @@
       "required": true
     },
     {
-      "default": "training-dev-bucket-1",
+      "default": "training-dev-bucket-7",
       "description": "Name of S3 bucket to create",
       "hasOptions": false,
       "label": "",
@@ -331,7 +331,7 @@
           "cooldown": 10,
           "copySourceCustomBlockDeviceMappings": false,
           "delayBeforeDisableSec": 0,
-          "delayBeforeScaleDownSec": 0,
+          "delayBeforeScaleDownSec": "5",
           "ebsOptimized": true,
           "enabledMetrics": [],
           "freeFormDetails": "alc",
@@ -345,6 +345,7 @@
           ],
           "keyPair": "alc-spin",
           "loadBalancers": [],
+          "maxRemainingAsgs": 2,
           "moniker": {
             "app": "terraformer",
             "detail": "alc",
@@ -354,12 +355,13 @@
           "rollback": {
             "onFailure": true
           },
+          "scaleDown": true,
           "securityGroups": [
             "sg-0f4a52341b94f21b9"
           ],
           "spotPrice": "",
           "stack": "training",
-          "strategy": "highlander",
+          "strategy": "redblack",
           "subnetType": "armory-spin-alc-dev-public-kb3o3el4g4",
           "suspendedProcesses": [],
           "tags": {
@@ -566,8 +568,9 @@
                   "command": [
                     "/bin/sh",
                     "-c",
-                    "aws s3 rm s3://${parameters.createBucketName} --recursive;  "
+                    "aws s3 rm s3://${parameters.createBucketName} --recursive"
                   ],
+                  "image": "alchen99/k8s-debug:latest",
                   "name": "emptybucket"
                 }
               ],
@@ -587,5 +590,5 @@
     }
   ],
   "triggers": [],
-  "updateTs": "1643665143000"
+  "updateTs": "1643668307000"
 }
