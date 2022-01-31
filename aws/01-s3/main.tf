@@ -3,12 +3,12 @@ locals {
 }
 
 module "s3_bucket" {
-  source = "github.com/alchen99/terraform-aws-s3-bucket"
+  source = "terraform-aws-modules/s3-bucket/aws"
+  version = "1.25.0"
 
   create_bucket = var.create_s3_bucket
 
   bucket = local.s3_bucket_name_local
-  region = var.region
   acl    = "private"
 
   versioning = {
