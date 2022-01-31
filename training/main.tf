@@ -42,6 +42,6 @@ data "aws_s3_bucket" "selected" {
   bucket = local.s3_bucket_name_local
 }
 
-output "s3_bucket_id" {
+output "s3bucket" {
   value = data.aws_s3_bucket.selected.id
 }
