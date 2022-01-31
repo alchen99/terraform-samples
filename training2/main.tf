@@ -8,7 +8,7 @@ module "s3_bucket" {
   acl    = "private"
 
   versioning = {
-    enabled = true
+    enabled = false
   }
 
   server_side_encryption_configuration = {
