@@ -3,7 +3,7 @@ locals {
 }
 
 module "s3_bucket" {
-  source = "git@github.com:alchen99/terraform-aws-s3-bucket.git"
+  source = "https://github.com/alchen99/terraform-aws-s3-bucket.git"
 
   create_bucket = var.create_s3_bucket
 
